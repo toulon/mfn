@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/netswitches/create") Create a new Netswitch
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Ip
+				th Serial
+				th Model
+				th Location
+				th Name
+				th Prodnbr
+				th Mac
+		tbody
+			each netswitch in netswitches
+				tr
+					td
+						a(href="/netswitches/" + netswitch._id + "/detail", title="Detail")= display(netswitch.ip)
+
+						td= display(netswitch.serial)
+
+						td= display(netswitch.model)
+
+						td= display(netswitch.location)
+
+						td= display(netswitch.name)
+
+						td= display(netswitch.prodnbr)
+
+						td= display(netswitch.mac)
+

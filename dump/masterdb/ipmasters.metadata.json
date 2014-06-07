@@ -1,0 +1,1 @@
+{ "options" : { "create" : "ipmasters" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "masterdb.ipmasters", "name" : "_id_" } ] }

@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Eswitch Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Sname
+          td= display(eswitch.sname)
+        tr
+          td Slocation
+          td= display(eswitch.slocation)
+        tr
+          td Sip
+          td= display(eswitch.sip)
+        tr
+          td Nagios
+          td= display(eswitch.nagios)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/eswitches") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/eswitches/" + eswitch._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/eswitches/" + eswitch._id + "/delete") Delete

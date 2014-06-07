@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "test.stuff", "name" : "_id_" }, { "v" : 1, "key" : { "thing" : 1 }, "unique" : true, "ns" : "test.stuff", "name" : "thing_1", "dropDups" : true } ] }

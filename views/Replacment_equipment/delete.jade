@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Replacment_equipment?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Serial
+          td= display(Replacment_equipment.serial)
+        tr
+          td Partnbr
+          td= display(Replacment_equipment.partnbr)
+        tr
+          td Description
+          td= display(Replacment_equipment.description)
+
+
+  form#Replacment_equipment-form.form-horizontal(action="/Replacment_equipments/" + Replacment_equipment._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Replacment_equipments") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

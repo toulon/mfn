@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Scanner?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ipaddress
+          td= display(scanner.IPAddress)
+        tr
+          td Model
+          td= display(scanner.model)
+        tr
+          td Serialnbr
+          td= display(scanner.serialNbr)
+        tr
+          td Browserversion
+          td= display(scanner.browserVersion)
+
+
+  form#scanner-form.form-horizontal(action="/scanners/" + scanner._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/scanners") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

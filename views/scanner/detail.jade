@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Scanner Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ipaddress
+          td= display(scanner.IPAddress)
+        tr
+          td Model
+          td= display(scanner.model)
+        tr
+          td Serialnbr
+          td= display(scanner.serialNbr)
+        tr
+          td Browserversion
+          td= display(scanner.browserVersion)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/scanners") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/scanners/" + scanner._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/scanners/" + scanner._id + "/delete") Delete

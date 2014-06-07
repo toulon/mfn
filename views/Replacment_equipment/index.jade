@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/Replacment_equipments/create") Create a new Replacment_equipment
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Serial
+				th Partnbr
+				th Description
+		tbody
+			each Replacment_equipment in Replacment_equipments
+				tr
+					td
+						a(href="/Replacment_equipments/" + Replacment_equipment._id + "/detail", title="Detail")= display(Replacment_equipment.serial)
+
+						td= display(Replacment_equipment.partnbr)
+
+						td= display(Replacment_equipment.description)
+

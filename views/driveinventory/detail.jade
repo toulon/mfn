@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  h2.display-data Driveinventory Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Serial
+          td= display(driveinventory.Serial)
+        tr
+          td Model
+          td= display(driveinventory.Model)
+        tr
+          td Mfg
+          td= display(driveinventory.Mfg)
+        tr
+          td Partnbr
+          td= display(driveinventory.PartNbr)
+        tr
+          td Speed
+          td= display(driveinventory.Speed)
+        tr
+          td Size
+          td= display(driveinventory.Size)
+        tr
+          td Date
+          td= display(driveinventory.Date)
+        tr
+          td Description
+          td= display(driveinventory.Description)
+        tr
+          td Server
+          td= display(driveinventory.Server)
+        tr
+          td Location
+          td= display(driveinventory.Location)
+        tr
+          td Note
+          td= display(driveinventory.Note)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/driveinventories") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/driveinventories/" + driveinventory._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/driveinventories/" + driveinventory._id + "/delete") Delete

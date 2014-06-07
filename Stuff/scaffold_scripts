@@ -1,0 +1,64 @@
+
+trestle scaffold eswitch sname slocation sip nagios:Boolean
+sleep 3
+
+ trestle scaffold ip_phone mac:string:required:true model part_nbr extention location label deployed:boolean note
+sleep 3
+
+trestle scaffold harddrive Server  ODModel  ODSerial  ODPartNbr  NDModel NDSerial NDPartNbr trnDate:Date DLocation Note
+sleep 3
+
+trestle scaffold cur_ipmaster ip_address:string:required:true computer_name first_name last_name mac active note first second third fourth
+sleep 3
+
+trestle scaffold driveinventory Serial Model Mfg PartNbr Speed  Size Date:Date  Description Server Location Note
+sleep 3
+
+trestle scaffold  ip_0_12 IP ifTypeIcon   ifName  ifDescr   ifAlias  ifAdminIcon  ifOperIcon   MAC  DNS  VLANs VLANforMAC ifspeed ifpype TrunkPort
+sleep 3
+
+trestle scaffold  ip_0_126 IP ifTypeIcon   ifName  ifDescr   ifAlias  ifAdminIcon  ifOperIcon   MAC  DNS  VLANs VLANforMAC ifspeed ifpype TrunkPort
+sleep 3
+
+trestle scaffold  ip_0_232 IP ifTypeIcon   ifName  ifDescr   ifAlias  ifAdminIcon  ifOperIcon   MAC  DNS  VLANs VLANforMAC ifspeed ifpype TrunkPort
+sleep 3
+
+trestle scaffold  ip_0_241 IP ifTypeIcon   ifName  ifDescr   ifAlias  ifAdminIcon  ifOperIcon   MAC  DNS  VLANs VLANforMAC ifspeed ifpype TrunkPort
+sleep 3
+
+trestle scaffold oldswitch   SwitchPort:String:required:true Location  Patch   IPAddress   Vlan  Port   Notes
+sleep 3
+
+trestle scaffold netswitch ip serial model location  name prodnbr  mac
+sleep 3
+
+trestle scaffold Promisdbtape backupDay:Number casseteSlot rotation:Date label
+sleep 3
+
+trestle scaffold Promisostape backupWeek:Number casseteSlot rotation:Date label
+sleep 3
+
+trestle scaffold Promisoffsitestorage label description
+sleep 3
+
+trestle scaffold Promistapesinventory  Database:Boolean OS
+sleep 3
+
+trestle scaffold  Replacment_equipment  serial  partnbr description
+sleep 3
+
+trestle scaffold scanner   IPAddress   model   serialNbr   browserVersion
+sleep 3
+
+trestle scaffold Serverroom   ServerName Location   Port SwitchPort   vlan   IPAddress  Switch  SwPort OS  Notes
+sleep 3
+
+trestle scaffold wap serial:string:required:true mac model label location note
+sleep 3
+trestle scaffold eswitch sname:string:required:true slocation sip nagios:boolean
+sleep 3
+trestle scaffold ipmaster ip:string:required:true  hostname location purpose notes username password
+sleep 3
+
+trestle scaffold mfntape label:string:required:true action_date:datetime action location
+sleep 3

@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  h2.display-data Cur_ipmaster Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip_address
+          td= display(cur_ipmaster.ip_address)
+        tr
+          td Computer_name
+          td= display(cur_ipmaster.computer_name)
+        tr
+          td First_name
+          td= display(cur_ipmaster.first_name)
+        tr
+          td Last_name
+          td= display(cur_ipmaster.last_name)
+        tr
+          td Mac
+          td= display(cur_ipmaster.mac)
+        tr
+          td Active
+          td= display(cur_ipmaster.active)
+        tr
+          td Note
+          td= display(cur_ipmaster.note)
+        tr
+          td First
+          td= display(cur_ipmaster.first)
+        tr
+          td Second
+          td= display(cur_ipmaster.second)
+        tr
+          td Third
+          td= display(cur_ipmaster.third)
+        tr
+          td Fourth
+          td= display(cur_ipmaster.fourth)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/cur_ipmasters") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/cur_ipmasters/" + cur_ipmaster._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/cur_ipmasters/" + cur_ipmaster._id + "/delete") Delete

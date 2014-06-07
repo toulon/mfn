@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Wap?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Serial
+          td= display(wap.serial)
+        tr
+          td Mac
+          td= display(wap.mac)
+        tr
+          td Model
+          td= display(wap.model)
+        tr
+          td Label
+          td= display(wap.label)
+        tr
+          td Location
+          td= display(wap.location)
+        tr
+          td Note
+          td= display(wap.note)
+
+
+  form#wap-form.form-horizontal(action="/waps/" + wap._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/waps") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

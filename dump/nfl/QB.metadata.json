@@ -1,0 +1,1 @@
+{ "options" : { "create" : "QB" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "nfl.QB", "name" : "_id_" } ] }

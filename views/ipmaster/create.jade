@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#ipmaster-form.form-horizontal.col-md-offset-2.col-md-10(action="/ipmasters/create", method="POST")
+      fieldset
+        legend Create a new Ipmaster
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/ipmasters") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Create

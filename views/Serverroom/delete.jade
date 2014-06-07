@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Serverroom?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Servername
+          td= display(Serverroom.ServerName)
+        tr
+          td Location
+          td= display(Serverroom.Location)
+        tr
+          td Port
+          td= display(Serverroom.Port)
+        tr
+          td Switchport
+          td= display(Serverroom.SwitchPort)
+        tr
+          td Vlan
+          td= display(Serverroom.vlan)
+        tr
+          td Ipaddress
+          td= display(Serverroom.IPAddress)
+        tr
+          td Switch
+          td= display(Serverroom.Switch)
+        tr
+          td Swport
+          td= display(Serverroom.SwPort)
+        tr
+          td Os
+          td= display(Serverroom.OS)
+        tr
+          td Notes
+          td= display(Serverroom.Notes)
+
+
+  form#Serverroom-form.form-horizontal(action="/Serverrooms/" + Serverroom._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Serverrooms") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

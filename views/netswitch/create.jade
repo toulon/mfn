@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#netswitch-form.form-horizontal.col-md-offset-2.col-md-10(action="/netswitches/create", method="POST")
+      fieldset
+        legend Create a new Netswitch
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/netswitches") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Create

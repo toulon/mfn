@@ -1,0 +1,249 @@
+10.45.128.26
+interface GigabitEthernet1/0/1
+description "B59LCP - 4M4"
+ port access vlan 32
+
+interface GigabitEthernet1/0/2
+description "M2-J7 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+ #
+interface GigabitEthernet1/0/3
+description "859LCP - 4P5I"
+ port access vlan 32
+
+interface GigabitEthernet1/0/4
+description "M2-K7 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+ #
+interface GigabitEthernet1/0/5
+description "B59LCP  - 4P8"
+ port access vlan 32
+
+interface GigabitEthernet1/0/6
+description "Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/7
+description "PLC 4M53"
+ port access vlan 32
+
+interface GigabitEthernet1/0/8
+description "M2-L7 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/9
+description "M2-L7- IPA VMB2"
+ port access vlan 32
+
+interface GigabitEthernet1/0/10
+description "M2-K5 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/11
+description "M2-K5 - HCL-VMB2"
+ port access vlan 32
+
+interface GigabitEthernet1/0/12
+description "M2-J5 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/13
+description "M2-K5 - HCL-VMB1"
+ port access vlan 32
+
+interface GigabitEthernet1/0/14
+description "M2-H5 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/15
+description "M2-K5 - HCL-VMB2"
+ port access vlan 32
+
+interface GigabitEthernet1/0/16
+description "M2-K9 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/17
+description "M2-R7 - EBR VMB1"
+ port access vlan 32
+
+interface GigabitEthernet1/0/18
+description "M2-K10 - Camera"
+ port access vlan 254
+
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/19
+description "M2-R7  EBR VMB4"
+ port access vlan 32
+
+interface GigabitEthernet1/0/20
+description "M2-J10 - Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/21
+description "M2-R7  EBR VMB4"
+ port access vlan 32
+
+interface GigabitEthernet1/0/22
+description "M2-K2 - Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/23
+description "M2-K7  - B59LCP-2"
+ port access vlan 32
+
+interface GigabitEthernet1/0/24
+description "L2-R6 - Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/25
+description ""
+
+interface GigabitEthernet1/0/26
+description "L2-K2 - Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/27
+description ""
+
+interface GigabitEthernet1/0/28
+description "L2-M8 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/29
+description ""
+
+interface GigabitEthernet1/0/30
+description "L2-J8 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/31
+ port link-mode bridge
+ description ""
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/32
+ port link-mode bridge
+ description "L2-K9 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/33
+ port link-mode bridge
+ description ""
+  port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/34
+ port link-mode bridge
+ description "L2-R8 - Phone"
+  port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/35
+ port link-mode bridge
+ description ""
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/36
+ port link-mode bridge
+ description ""
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/37
+ port link-mode bridge
+description ""
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/38
+ port link-mode bridge
+description ""
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/39
+ port link-mode bridge
+description ""
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/40
+ port link-mode bridge
+description ""
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/41
+description ""
+
+interface GigabitEthernet1/0/42
+description "L2-J5.5 - NOV19 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/43
+description ""
+
+interface GigabitEthernet1/0/44
+description "L2-J5.5 - NOV19 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/45
+description ""
+
+interface GigabitEthernet1/0/46
+description "L2-J5.5 - NOV19 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+
+interface GigabitEthernet1/0/47
+description ""
+
+interface GigabitEthernet1/0/48
+description "L2-J5.5 - NOV19 - Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable

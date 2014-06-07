@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Oldswitch?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Switchport
+          td= display(oldswitch.SwitchPort)
+        tr
+          td Location
+          td= display(oldswitch.Location)
+        tr
+          td Patch
+          td= display(oldswitch.Patch)
+        tr
+          td Ipaddress
+          td= display(oldswitch.IPAddress)
+        tr
+          td Vlan
+          td= display(oldswitch.Vlan)
+        tr
+          td Port
+          td= display(oldswitch.Port)
+        tr
+          td Notes
+          td= display(oldswitch.Notes)
+
+
+  form#oldswitch-form.form-horizontal(action="/oldswitches/" + oldswitch._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/oldswitches") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#Promistapesinventory-form.form-horizontal.col-md-offset-2.col-md-10(action="/Promistapesinventories/" + Promistapesinventory._id + "/edit", method="POST")
+      fieldset
+        legend Edit Promistapesinventory
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/Promistapesinventories") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Save

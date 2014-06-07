@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#Serverroom-form.form-horizontal.col-md-offset-2.col-md-10(action="/Serverrooms/" + Serverroom._id + "/edit", method="POST")
+      fieldset
+        legend Edit Serverroom
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/Serverrooms") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Save

@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/Serverrooms/create") Create a new Serverroom
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Servername
+				th Location
+				th Port
+				th Switchport
+				th Vlan
+				th Ipaddress
+				th Switch
+				th Swport
+				th Os
+				th Notes
+		tbody
+			each Serverroom in Serverrooms
+				tr
+					td
+						a(href="/Serverrooms/" + Serverroom._id + "/detail", title="Detail")= display(Serverroom.ServerName)
+
+						td= display(Serverroom.Location)
+
+						td= display(Serverroom.Port)
+
+						td= display(Serverroom.SwitchPort)
+
+						td= display(Serverroom.vlan)
+
+						td= display(Serverroom.IPAddress)
+
+						td= display(Serverroom.Switch)
+
+						td= display(Serverroom.SwPort)
+
+						td= display(Serverroom.OS)
+
+						td= display(Serverroom.Notes)
+

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#ip_phone-form.form-horizontal.col-md-offset-2.col-md-10(action="/ip_phones/" + ip_phone._id + "/edit", method="POST")
+      fieldset
+        legend Edit Ip_phone
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/ip_phones") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Save

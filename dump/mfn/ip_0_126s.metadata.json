@@ -1,0 +1,1 @@
+{ "options" : { "create" : "ip_0_126s" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "mfn.ip_0_126s", "name" : "_id_" } ] }

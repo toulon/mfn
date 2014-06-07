@@ -1,0 +1,70 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/ip_0_232s/create") Create a new Ip_0_232
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Ip
+				th Iftypeicon
+				th Ifname
+				th Ifdescr
+				th Ifalias
+				th Ifadminicon
+				th Ifopericon
+				th Mac
+				th Dns
+				th Vlans
+				th Vlanformac
+				th Ifspeed
+				th Ifpype
+				th Trunkport
+		tbody
+			each ip_0_232 in ip_0_232s
+				tr
+					td
+						a(href="/ip_0_232s/" + ip_0_232._id + "/detail", title="Detail")= display(ip_0_232.IP)
+
+						td= display(ip_0_232.ifTypeIcon)
+
+						td= display(ip_0_232.ifName)
+
+						td= display(ip_0_232.ifDescr)
+
+						td= display(ip_0_232.ifAlias)
+
+						td= display(ip_0_232.ifAdminIcon)
+
+						td= display(ip_0_232.ifOperIcon)
+
+						td= display(ip_0_232.MAC)
+
+						td= display(ip_0_232.DNS)
+
+						td= display(ip_0_232.VLANs)
+
+						td= display(ip_0_232.VLANforMAC)
+
+						td= display(ip_0_232.ifspeed)
+
+						td= display(ip_0_232.ifpype)
+
+						td= display(ip_0_232.TrunkPort)
+

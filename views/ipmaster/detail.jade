@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h2.display-data Ipmaster Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip
+          td= display(ipmaster.ip)
+        tr
+          td Hostname
+          td= display(ipmaster.hostname)
+        tr
+          td Location
+          td= display(ipmaster.location)
+        tr
+          td Purpose
+          td= display(ipmaster.purpose)
+        tr
+          td Notes
+          td= display(ipmaster.notes)
+        tr
+          td Username
+          td= display(ipmaster.username)
+        tr
+          td Password
+          td= display(ipmaster.password)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/ipmasters") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/ipmasters/" + ipmaster._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/ipmasters/" + ipmaster._id + "/delete") Delete

@@ -1,0 +1,292 @@
+interface GigabitEthernet1/0/1
+ port link-mode bridge
+ description "M2-E6 VMB-1 IPA"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/2
+ port link-mode bridge
+ description "M2-G6 Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/3
+ port link-mode bridge
+ description "M2-E6 VMB-3 EBR"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/4
+ port link-mode bridge
+ description "M2-F5 Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/5
+ port link-mode bridge
+ description "M2-E6 VMB-2 EBR"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/6
+ port link-mode bridge
+ description "M2-F6 Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/7
+ port link-mode bridge
+ description "M2-E5.5 - PLC 4M6"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/8
+ port link-mode bridge
+ description "L2-F7 - MATT08 Phone"
+ port access vlan 192
+ poe enable
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/9
+ port link-mode bridge
+ description "W COR BCD Camera"
+ port access vlan 254
+ poe enable
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/10
+ port link-mode bridge
+ description "L2-D2 Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/11
+ port link-mode bridge
+ description ?E COR BCD Camera"
+ port access vlan 254
+ poe enable
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/12
+ port link-mode bridge
+ description "L2-B2 Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/13
+ port link-mode bridge
+ description "
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/14
+ port link-mode bridge
+ description "L2-J10 Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/15
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/16
+ port link-mode bridge
+ description "L2-H10 Camera"
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/17
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/18
+ port link-mode bridge
+ description "L2-G6 Phone"
+ port access vlan 192
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/19
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/20
+ port link-mode bridge
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/21
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/22
+ port link-mode bridge
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/23
+ port link-mode bridge
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/24
+ port link-mode bridge
+ description ""
+ port access vlan 254
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/25
+ port link-mode bridge
+ description "M2-E7 - VMB-2 HF""
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/26
+ port link-mode bridge
+ description "M2-D8.5 - PLC 4E8-2"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/27
+ port link-mode bridge
+ description "M2-D8.5 - PLC 4E8-1"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/28
+ port link-mode bridge
+ description "M2-D8.5 - PLC 4E8-3"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/29
+ port link-mode bridge
+ description "M2-E7 - VMB-1 EKC"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/30
+ port link-mode bridge
+ description "M2-E7 - VMB-1 PSR"
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/31
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/32
+ port link-mode bridge
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/33
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/34
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/35
+ port link-mode bridge
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/36
+ port link-mode bridge
+ port access vlan 32
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/37
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/38
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/39
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/40
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/41
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/42
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/43
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/44
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/45
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/46
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/47
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#
+interface GigabitEthernet1/0/48
+ port link-mode bridge
+ apply poe-profile index 1
+ stp edged-port enable
+#

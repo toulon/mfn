@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Ip_phone?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Mac
+          td= display(ip_phone.mac)
+        tr
+          td Model
+          td= display(ip_phone.model)
+        tr
+          td Part_nbr
+          td= display(ip_phone.part_nbr)
+        tr
+          td Extention
+          td= display(ip_phone.extention)
+        tr
+          td Note
+          td= display(ip_phone.note)
+
+
+  form#ip_phone-form.form-horizontal(action="/ip_phones/" + ip_phone._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/ip_phones") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

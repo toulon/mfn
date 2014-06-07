@@ -1,0 +1,43 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/ip_phones/create") Create a new Ip_phone
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Mac
+				th Model
+				th Part_nbr
+				th Extention
+				th Note
+		tbody
+			each ip_phone in ip_phones
+				tr
+					td
+						a(href="/ip_phones/" + ip_phone._id + "/detail", title="Detail")= display(ip_phone.mac)
+
+						td= display(ip_phone.model)
+
+						td= display(ip_phone.part_nbr)
+
+						td= display(ip_phone.extention)
+
+						td= display(ip_phone.note)
+

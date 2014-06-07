@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Eswitch?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Sname
+          td= display(eswitch.sname)
+        tr
+          td Slocation
+          td= display(eswitch.slocation)
+        tr
+          td Sip
+          td= display(eswitch.sip)
+        tr
+          td Nagios
+          td= display(eswitch.nagios)
+
+
+  form#eswitch-form.form-horizontal(action="/eswitches/" + eswitch._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/eswitches") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

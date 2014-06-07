@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Promisoffsitestorage?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Label
+          td= display(Promisoffsitestorage.label)
+        tr
+          td Description
+          td= display(Promisoffsitestorage.description)
+
+
+  form#Promisoffsitestorage-form.form-horizontal(action="/Promisoffsitestorages/" + Promisoffsitestorage._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Promisoffsitestorages") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

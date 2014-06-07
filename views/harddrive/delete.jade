@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Harddrive?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Server
+          td= display(harddrive.Server)
+        tr
+          td Odmodel
+          td= display(harddrive.ODModel)
+        tr
+          td Odserial
+          td= display(harddrive.ODSerial)
+        tr
+          td Odpartnbr
+          td= display(harddrive.ODPartNbr)
+        tr
+          td Ndmodel
+          td= display(harddrive.NDModel)
+        tr
+          td Ndserial
+          td= display(harddrive.NDSerial)
+        tr
+          td Ndpartnbr
+          td= display(harddrive.NDPartNbr)
+        tr
+          td Trndate
+          td= display(harddrive.trnDate)
+        tr
+          td Dlocation
+          td= display(harddrive.DLocation)
+        tr
+          td Note
+          td= display(harddrive.Note)
+
+
+  form#harddrive-form.form-horizontal(action="/harddrives/" + harddrive._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/harddrives") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

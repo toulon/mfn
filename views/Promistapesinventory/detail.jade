@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  h2.display-data Promistapesinventory Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Database
+          td= display(Promistapesinventory.Database)
+        tr
+          td Os
+          td= display(Promistapesinventory.OS)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/Promistapesinventories") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/Promistapesinventories/" + Promistapesinventory._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/Promistapesinventories/" + Promistapesinventory._id + "/delete") Delete

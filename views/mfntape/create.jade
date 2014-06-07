@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#mfntape-form.form-horizontal.col-md-offset-2.col-md-10(action="/mfntapes/create", method="POST")
+      fieldset
+        legend Create a new Mfntape
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/mfntapes") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Create

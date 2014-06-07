@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  body
+    form#joe-form.form-horizontal.col-md-offset-2.col-md-10(action="/mfntape/joe", method="POST")
+      fieldset
+        legend Edit Joe
+
+          input(type="hidden", name="_method", value="POST")
+          p Count
+            input(type="number", name="cnt")
+
+      .form-group.col-md-offset-2.col-md-10
+        a.btn.btn-warning(href="/joe") Back
+        | &nbsp;
+        button.btn.btn-primary(type="submit") Save
+  p Hi There 1

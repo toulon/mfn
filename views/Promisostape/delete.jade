@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Promisostape?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Backupweek
+          td= display(Promisostape.backupWeek)
+        tr
+          td Casseteslot
+          td= display(Promisostape.casseteSlot)
+        tr
+          td Rotation
+          td= display(Promisostape.rotation)
+        tr
+          td Label
+          td= display(Promisostape.label)
+
+
+  form#Promisostape-form.form-horizontal(action="/Promisostapes/" + Promisostape._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Promisostapes") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

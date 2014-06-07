@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "mfn.cur_ipmasters", "name" : "_id_" }, { "v" : 1, "key" : { "ip_address" : 1 }, "ns" : "mfn.cur_ipmasters", "name" : "ip_address_1" } ] }

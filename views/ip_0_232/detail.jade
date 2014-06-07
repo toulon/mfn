@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+  h2.display-data Ip_0_232 Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip
+          td= display(ip_0_232.IP)
+        tr
+          td Iftypeicon
+          td= display(ip_0_232.ifTypeIcon)
+        tr
+          td Ifname
+          td= display(ip_0_232.ifName)
+        tr
+          td Ifdescr
+          td= display(ip_0_232.ifDescr)
+        tr
+          td Ifalias
+          td= display(ip_0_232.ifAlias)
+        tr
+          td Ifadminicon
+          td= display(ip_0_232.ifAdminIcon)
+        tr
+          td Ifopericon
+          td= display(ip_0_232.ifOperIcon)
+        tr
+          td Mac
+          td= display(ip_0_232.MAC)
+        tr
+          td Dns
+          td= display(ip_0_232.DNS)
+        tr
+          td Vlans
+          td= display(ip_0_232.VLANs)
+        tr
+          td Vlanformac
+          td= display(ip_0_232.VLANforMAC)
+        tr
+          td Ifspeed
+          td= display(ip_0_232.ifspeed)
+        tr
+          td Ifpype
+          td= display(ip_0_232.ifpype)
+        tr
+          td Trunkport
+          td= display(ip_0_232.TrunkPort)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/ip_0_232s") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/ip_0_232s/" + ip_0_232._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/ip_0_232s/" + ip_0_232._id + "/delete") Delete

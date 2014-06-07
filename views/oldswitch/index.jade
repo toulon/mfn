@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/oldswitches/create") Create a new Oldswitch
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Switchport
+				th Location
+				th Patch
+				th Ipaddress
+				th Vlan
+				th Port
+				th Notes
+		tbody
+			each oldswitch in oldswitches
+				tr
+					td
+						a(href="/oldswitches/" + oldswitch._id + "/detail", title="Detail")= display(oldswitch.SwitchPort)
+
+						td= display(oldswitch.Location)
+
+						td= display(oldswitch.Patch)
+
+						td= display(oldswitch.IPAddress)
+
+						td= display(oldswitch.Vlan)
+
+						td= display(oldswitch.Port)
+
+						td= display(oldswitch.Notes)
+

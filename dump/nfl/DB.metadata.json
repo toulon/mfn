@@ -1,0 +1,1 @@
+{ "options" : { "create" : "DB" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "nfl.DB", "name" : "_id_" } ] }

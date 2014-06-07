@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/waps/create") Create a new Wap
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Serial
+				th Mac
+				th Model
+				th Label
+				th Location
+				th Note
+		tbody
+			each wap in waps
+				tr
+					td
+						a(href="/waps/" + wap._id + "/detail", title="Detail")= display(wap.serial)
+
+						td= display(wap.mac)
+
+						td= display(wap.model)
+
+						td= display(wap.label)
+
+						td= display(wap.location)
+
+						td= display(wap.note)
+

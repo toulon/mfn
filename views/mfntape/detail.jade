@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Mfntape Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Label
+          td= display(mfntape.label)
+        tr
+          td Action_date
+          td= display(mfntape.action_date)
+        tr
+          td Action
+          td= display(mfntape.action)
+        tr
+          td Location
+          td= display(mfntape.location)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/mfntapes") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/mfntapes/" + mfntape._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/mfntapes/" + mfntape._id + "/delete") Delete

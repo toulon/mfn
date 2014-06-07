@@ -1,0 +1,1 @@
+{ "options" : { "create" : "ipresearches" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "mfn.ipresearches", "name" : "_id_" } ] }

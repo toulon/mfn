@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/animals/create") Create a new Animal
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Name
+				th Mamal
+				th Color
+				th Size
+				th Weigh
+				th Gender
+		tbody
+			each animal in animals
+				tr
+					td
+						a(href="/animals/" + animal._id + "/detail", title="Detail")= display(animal.name)
+
+						td= display(animal.mamal)
+
+						td= display(animal.color)
+
+						td= display(animal.size)
+
+						td= display(animal.weigh)
+
+						td= display(animal.gender)
+

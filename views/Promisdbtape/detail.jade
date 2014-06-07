@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Promisdbtape Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Backupday
+          td= display(Promisdbtape.backupDay)
+        tr
+          td Casseteslot
+          td= display(Promisdbtape.casseteSlot)
+        tr
+          td Rotation
+          td= display(Promisdbtape.rotation)
+        tr
+          td Label
+          td= display(Promisdbtape.label)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/Promisdbtapes") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/Promisdbtapes/" + Promisdbtape._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/Promisdbtapes/" + Promisdbtape._id + "/delete") Delete

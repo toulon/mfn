@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h2.display-data Oldswitch Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Switchport
+          td= display(oldswitch.SwitchPort)
+        tr
+          td Location
+          td= display(oldswitch.Location)
+        tr
+          td Patch
+          td= display(oldswitch.Patch)
+        tr
+          td Ipaddress
+          td= display(oldswitch.IPAddress)
+        tr
+          td Vlan
+          td= display(oldswitch.Vlan)
+        tr
+          td Port
+          td= display(oldswitch.Port)
+        tr
+          td Notes
+          td= display(oldswitch.Notes)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/oldswitches") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/oldswitches/" + oldswitch._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/oldswitches/" + oldswitch._id + "/delete") Delete

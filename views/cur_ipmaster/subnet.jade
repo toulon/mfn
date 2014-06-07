@@ -1,0 +1,40 @@
+extends ../layout
+block content
+  script(type='text/javascript')
+    $(document).ready(function() {
+      $("table.table.tablesorter.table-bordered").tablesorter({
+        sortList: [[0,0]],
+        theme: 'blue',
+        widgets: ["zebra"],
+        build_headers : {
+          rows    : 1,  // Number of header rows from the csv
+          classes : [], // Header classes to apply to cells
+          text    : [], // Header cell text
+          widths  : [ '30%', '30%', '30%', '30%' ] // set header cell widths
+        },
+        }
+      );
+    });
+  h2.display-data.text-center #{page_title}
+    a.btn.btn-primary.pull-right(href="/cur_ipmasters/create") Create a new IP Address
+  table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+    thead
+      tr
+        th Ip_address
+        th Computer_name
+        th First_name
+        th Last_name
+        th Mac
+        th Active
+        th Note
+    tbody
+      each cur_ipmaster in cur_ipmasters
+        tr
+          td
+            a(href="/cur_ipmasters/" + cur_ipmaster._id + "/detail", title="Detail")= display(cur_ipmaster.ip_address)
+            td= display(cur_ipmaster.computer_name)
+            td= display(cur_ipmaster.first_name)
+            td= display(cur_ipmaster.last_name)
+            td= display(cur_ipmaster.mac)
+            td= display(cur_ipmaster.active)
+            td= display(cur_ipmaster.note)

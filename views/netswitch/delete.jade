@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Netswitch?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip
+          td= display(netswitch.ip)
+        tr
+          td Serial
+          td= display(netswitch.serial)
+        tr
+          td Model
+          td= display(netswitch.model)
+        tr
+          td Location
+          td= display(netswitch.location)
+        tr
+          td Name
+          td= display(netswitch.name)
+        tr
+          td Prodnbr
+          td= display(netswitch.prodnbr)
+        tr
+          td Mac
+          td= display(netswitch.mac)
+
+
+  form#netswitch-form.form-horizontal(action="/netswitches/" + netswitch._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/netswitches") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

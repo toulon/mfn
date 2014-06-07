@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Ip_0_12?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip
+          td= display(ip_0_12.IP)
+        tr
+          td Iftypeicon
+          td= display(ip_0_12.ifTypeIcon)
+        tr
+          td Ifname
+          td= display(ip_0_12.ifName)
+        tr
+          td Ifdescr
+          td= display(ip_0_12.ifDescr)
+        tr
+          td Ifalias
+          td= display(ip_0_12.ifAlias)
+        tr
+          td Ifadminicon
+          td= display(ip_0_12.ifAdminIcon)
+        tr
+          td Ifopericon
+          td= display(ip_0_12.ifOperIcon)
+        tr
+          td Mac
+          td= display(ip_0_12.MAC)
+        tr
+          td Dns
+          td= display(ip_0_12.DNS)
+        tr
+          td Vlans
+          td= display(ip_0_12.VLANs)
+        tr
+          td Vlanformac
+          td= display(ip_0_12.VLANforMAC)
+        tr
+          td Ifspeed
+          td= display(ip_0_12.ifspeed)
+        tr
+          td Ifpype
+          td= display(ip_0_12.ifpype)
+        tr
+          td Trunkport
+          td= display(ip_0_12.TrunkPort)
+
+
+  form#ip_0_12-form.form-horizontal(action="/ip_0_12s/" + ip_0_12._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/ip_0_12s") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Animal?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(animal.name)
+        tr
+          td Mamal
+          td= display(animal.mamal)
+        tr
+          td Color
+          td= display(animal.color)
+        tr
+          td Size
+          td= display(animal.size)
+        tr
+          td Weigh
+          td= display(animal.weigh)
+        tr
+          td Gender
+          td= display(animal.gender)
+
+
+  form#animal-form.form-horizontal(action="/animals/" + animal._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/animals") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

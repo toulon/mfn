@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/eswitches/create") Create a new Eswitch
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Sname
+				th Slocation
+				th Sip
+				th Nagios
+		tbody
+			each eswitch in eswitches
+				tr
+					td
+						a(href="/eswitches/" + eswitch._id + "/detail", title="Detail")= display(eswitch.sname)
+
+						td= display(eswitch.slocation)
+
+						td= display(eswitch.sip)
+
+						td= display(eswitch.nagios)
+

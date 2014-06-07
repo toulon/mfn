@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#oldswitch-form.form-horizontal.col-md-offset-2.col-md-10(action="/oldswitches/" + oldswitch._id + "/edit", method="POST")
+      fieldset
+        legend Edit Oldswitch
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/oldswitches") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Save

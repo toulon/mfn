@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#netswitch-form.form-horizontal.col-md-offset-2.col-md-10(action="/netswitches/" + netswitch._id + "/edit", method="POST")
+      fieldset
+        legend Edit Netswitch
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/netswitches") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Save

@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/ipmasters/create") Create a new Ipmaster
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Ip
+				th Hostname
+				th Location
+				th Purpose
+				th Notes
+				th Username
+				th Password
+		tbody
+			each ipmaster in ipmasters
+				tr
+					td
+						a(href="/ipmasters/" + ipmaster._id + "/detail", title="Detail")= display(ipmaster.ip)
+
+						td= display(ipmaster.hostname)
+
+						td= display(ipmaster.location)
+
+						td= display(ipmaster.purpose)
+
+						td= display(ipmaster.notes)
+
+						td= display(ipmaster.username)
+
+						td= display(ipmaster.password)
+

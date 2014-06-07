@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Promistapesinventory?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Database
+          td= display(Promistapesinventory.Database)
+        tr
+          td Os
+          td= display(Promistapesinventory.OS)
+
+
+  form#Promistapesinventory-form.form-horizontal(action="/Promistapesinventories/" + Promistapesinventory._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Promistapesinventories") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  body
+    #addPhone
+      form#ip_phone-form.form-horizontal.col-md-offset-2.col-md-10(action="/ip_phones/create", method="POST")
+        fieldset
+          legend Create a new Ip_phone
+
+          != form
+
+        .form-group.col-md-offset-2.col-md-10
+            a.btn.btn-warning(href="/ip_phones") Back
+            | &nbsp;
+            button.btn.btn-primary(type="submit") Create
+
+
+            h2 Add Tape
+    #addTape
+      fieldset
+        input#inputTapeLabel(type='text', placeholder='Label')
+        br
+        input#inputTapeAction(type='text', placeholder='Action')
+        input#inputTapeAction_date(type='date', value=mom, placeholder='Action_date')
+        br
+        p
+      select#inputTapeLocation(name="inputTapeLocation")
+        option(value="") -- Select Location --
+        - var options = [{value: 'happy', label: 'Happy'}, {value: 'sad', label: 'Sad'}]
+        each option in options
+          option(value=option.value, selected=(inputTapeLocation=option.value))= option.label
+        p
+        br
+      b

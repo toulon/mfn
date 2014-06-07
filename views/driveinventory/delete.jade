@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Driveinventory?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Serial
+          td= display(driveinventory.Serial)
+        tr
+          td Model
+          td= display(driveinventory.Model)
+        tr
+          td Mfg
+          td= display(driveinventory.Mfg)
+        tr
+          td Partnbr
+          td= display(driveinventory.PartNbr)
+        tr
+          td Speed
+          td= display(driveinventory.Speed)
+        tr
+          td Size
+          td= display(driveinventory.Size)
+        tr
+          td Date
+          td= display(driveinventory.Date)
+        tr
+          td Description
+          td= display(driveinventory.Description)
+        tr
+          td Server
+          td= display(driveinventory.Server)
+        tr
+          td Location
+          td= display(driveinventory.Location)
+        tr
+          td Note
+          td= display(driveinventory.Note)
+
+
+  form#driveinventory-form.form-horizontal(action="/driveinventories/" + driveinventory._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/driveinventories") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

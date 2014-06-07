@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Promisdbtape?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Backupday
+          td= display(Promisdbtape.backupDay)
+        tr
+          td Casseteslot
+          td= display(Promisdbtape.casseteSlot)
+        tr
+          td Rotation
+          td= display(Promisdbtape.rotation)
+        tr
+          td Label
+          td= display(Promisdbtape.label)
+
+
+  form#Promisdbtape-form.form-horizontal(action="/Promisdbtapes/" + Promisdbtape._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/Promisdbtapes") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

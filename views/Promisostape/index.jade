@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/Promisostapes/create") Create a new Promisostape
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Backupweek
+				th Casseteslot
+				th Rotation
+				th Label
+		tbody
+			each Promisostape in Promisostapes
+				tr
+					td
+						a(href="/Promisostapes/" + Promisostape._id + "/detail", title="Detail")= display(Promisostape.backupWeek)
+
+						td= display(Promisostape.casseteSlot)
+
+						td= display(Promisostape.rotation)
+
+						td= display(Promisostape.label)
+

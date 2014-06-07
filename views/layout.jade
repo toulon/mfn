@@ -1,0 +1,163 @@
+doctype html
+head
+  title IT MFN
+  meta(charset='UTF-8')
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet', href='/css/custom.css')
+  link(rel='stylesheet', href='/vendor/tablesorter/css/theme.blue.css')
+  link(rel='stylesheet', href='/vendor/tablesorter/css/prettify.css')
+  block scripts
+    script(src='https://raw.github.com/mongodb/js-bson/master/browser_build/bson.js')
+    script(src='/vendor/jquery/js/jquery.min.js')
+    script(src='/vendor/bootstrap/js/bootstrap.min.js')
+    script(src='/vendor/tablesorter/js/jquery.tablesorter.min.js')
+    script(src='/vendor/tablesorter/js/jquery.tablesorter.widgets.min.js')
+    script(src='/vendor/tablesorter/js/prettify.js')
+  block css
+  body
+nav.navbar-default(role="navigation")
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse")
+      span.sr-only Toggle navigation
+  // Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    ul.nav.navbar-nav
+      li.active
+        a(href="http://#{address}:#{port}").active Home
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Tapes
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href="http://#{address}:#{port}/promisOStapes") Promis OS Tapes
+          li
+            a(href="http://#{address}:#{port}/promisdbtapes") Promis DB Tapes
+          li
+            a(href="http://#{address}:#{port}/PromisTapesInventories") Promis Tape Inventory
+          li
+            a(href="http://#{address}:#{port}/promisoffsitestorages") Promis Offsite Storage
+          li
+            a(href="http://#{address}:#{port}/mfntapes").active NetWorker Tapes
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Drive Tracking
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href="http://#{address}:#{port}/Driveinventories") Drive Inventory
+          li
+            a(href="http://#{address}:#{port}/harddrives") Replaced Drives List
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Research
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href="http://#{address}:#{port}/Ip_0_12s") 172.16.0.12 (Core switch)
+          li
+            a(href="http://#{address}:#{port}/Ip_0_126s") 172.16.0.126
+          li
+            a(href="http://#{address}:#{port}/Ip_0_232s") 172.16.0.232
+          li
+            a(href="http://#{address}:#{port}/Ip_0_241s") 172.16.0.241
+          li
+            a(href="http://#{address}:#{port}/replacment_equipments") Replacement Equipment
+          li
+            a(href="http://#{address}:#{port}/serverrooms") Server Room Details
+          li
+            a(href="http://#{address}:#{port}/waps") WAP Inventory
+          li
+            a(href="http://#{address}:#{port}/scanners") Scanners
+          li
+            a(href="http://#{address}:#{port}/ip_phones") IP Phone Inventory
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Switches
+          b.caret
+        ul.dropdown-menu.active
+          li
+            a(href="http://#{address}:#{port}/netswitches").active Netswitches
+          li
+            a(href="http://#{address}:#{port}/OldSwitches").active Old Switches that are still active
+          li
+            a(href="http://#{address}:#{port}/eswitches").active List of all old Switches
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") IP Information
+          b.caret
+        ul.dropdown-menu.active
+          li
+            a.btn.btn-group.btn-default(href="http://#{address}:#{port}/ipmasters") IP Masters
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16") 172.16
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45") 10.45
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Subnet 172.16
+          b.caret
+          b.sr-only
+        ul.dropdown-menu.active
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16") 172.16
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_1") 172.16.1
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_2") 172.16.2
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_6") 172.16.6
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_7") 172.16.7
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_10") 172.16.10
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_15") 172.16.15
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_16") 172.16.16
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_17") 172.16.17
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_22") 172.16.22
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_26") 172.16.26
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_27") 172.16.27
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_32") 172.16.32
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_33") 172.16.33
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_36") 172.16.36
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_37") 172.16.37
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_46") 172.16.46
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_47") 172.16.47
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_56") 172.16.56
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_66") 172.16.66
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_67") 172.16.67
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_76") 172.16.76
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_172_16_72") 172.16.72
+      li.dropdown.active
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Subnet 10.45
+          b.caret
+          b.sr-only
+        ul.dropdown-menu.active
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45") 10.45
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_128") 10.45.128 - Network Equipment/23
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_130") 10.45.130 - Facilities/23
+          li
+          a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_150") 10.45.150 - Microsoft Servers/23
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_152") 10.45.152 - Unix Servers/23
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_160-5") 10.45.160-5 - Engineering PC/22
+          li
+            a.btn.btn-group.btn-default(href="/cur_ipmasters/subnet_10_45_208") 10.45.208 - Administration/24
+      block content

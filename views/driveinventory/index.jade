@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+	script(type='text/javascript')
+		$(document).ready(function() {
+			$("table.table.tablesorter.table-bordered").tablesorter({
+				sortList: [[0,0]],
+				theme: 'blue',
+				widgets: ["zebra"],
+				build_headers : {
+					rows    : 1,  // Number of header rows from the csv
+					classes : [], // Header classes to apply to cells
+					text    : [], // Header cell text
+					widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+				},
+				}
+			);
+		});
+	h2.display-data #{page_title}
+		a.btn.btn-primary.pull-right(href="/driveinventories/create") Create a new Driveinventory
+
+	table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+		thead
+			tr
+				th Serial
+				th Model
+				th Mfg
+				th Partnbr
+				th Speed
+				th Size
+				th Date
+				th Description
+				th Server
+				th Location
+				th Note
+		tbody
+			each driveinventory in driveinventories
+				tr
+					td
+						a(href="/driveinventories/" + driveinventory._id + "/detail", title="Detail")= display(driveinventory.Serial)
+
+						td= display(driveinventory.Model)
+
+						td= display(driveinventory.Mfg)
+
+						td= display(driveinventory.PartNbr)
+
+						td= display(driveinventory.Speed)
+
+						td= display(driveinventory.Size)
+
+						td= display(driveinventory.Date)
+
+						td= display(driveinventory.Description)
+
+						td= display(driveinventory.Server)
+
+						td= display(driveinventory.Location)
+
+						td= display(driveinventory.Note)
+

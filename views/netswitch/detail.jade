@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h2.display-data Netswitch Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ip
+          td= display(netswitch.ip)
+        tr
+          td Serial
+          td= display(netswitch.serial)
+        tr
+          td Model
+          td= display(netswitch.model)
+        tr
+          td Location
+          td= display(netswitch.location)
+        tr
+          td Name
+          td= display(netswitch.name)
+        tr
+          td Prodnbr
+          td= display(netswitch.prodnbr)
+        tr
+          td Mac
+          td= display(netswitch.mac)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/netswitches") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/netswitches/" + netswitch._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/netswitches/" + netswitch._id + "/delete") Delete

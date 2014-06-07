@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  h2.display-data Animal Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(animal.name)
+        tr
+          td Mamal
+          td= display(animal.mamal)
+        tr
+          td Color
+          td= display(animal.color)
+        tr
+          td Size
+          td= display(animal.size)
+        tr
+          td Weigh
+          td= display(animal.weigh)
+        tr
+          td Gender
+          td= display(animal.gender)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/animals") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/animals/" + animal._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/animals/" + animal._id + "/delete") Delete
