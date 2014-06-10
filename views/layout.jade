@@ -8,7 +8,6 @@ head
   link(rel='stylesheet', href='/vendor/tablesorter/css/theme.blue.css')
   link(rel='stylesheet', href='/vendor/tablesorter/css/prettify.css')
   block scripts
-    script(src='https://raw.github.com/mongodb/js-bson/master/browser_build/bson.js')
     script(src='/vendor/jquery/js/jquery.min.js')
     script(src='/vendor/bootstrap/js/bootstrap.min.js')
     script(src='/vendor/tablesorter/js/jquery.tablesorter.min.js')
@@ -67,9 +66,13 @@ nav.navbar-default(role="navigation")
           li
             a(href="http://#{address}:#{port}/waps") WAP Inventory
           li
+            a(href="http://#{address}:#{port}/tablets") Tablet Tracker
+          li
             a(href="http://#{address}:#{port}/scanners") Scanners
           li
             a(href="http://#{address}:#{port}/ip_phones") IP Phone Inventory
+          li
+            a(href="http://#{address}:#{port}/networklines") Track Network line installation
       li.dropdown.active
         a.dropdown-toggle(href="#" data-toggle="dropdown") Switches
           b.caret

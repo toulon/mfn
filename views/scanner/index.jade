@@ -26,6 +26,8 @@ block content
 				th Model
 				th Serialnbr
 				th Browserversion
+				th Converted
+				th Notes
 		tbody
 			each scanner in scanners
 				tr
@@ -37,4 +39,8 @@ block content
 						td= display(scanner.serialNbr)
 
 						td= display(scanner.browserVersion)
+
+						td= display(scanner.converted)
+
+						td= display(scanner.notes)
 

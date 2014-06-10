@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Tablet Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(tablet.name)
+        tr
+          td Curdate
+          td= display(tablet.curdate)
+        tr
+          td Location
+          td= display(tablet.location)
+        tr
+          td Status
+          td= display(tablet.status)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/tablets") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/tablets/" + tablet._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/tablets/" + tablet._id + "/delete") Delete

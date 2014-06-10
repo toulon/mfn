@@ -8,7 +8,7 @@ var fields = forms.fields,
   widgets = forms.widgets;
 
 module.exports = function(app) {
-  var reg_form = forms.create({
+var reg_form = forms.create({
         label: fields.string ({      label: 'Label'
     }),
         action_date: fields.date ({      label: 'Action_date'
@@ -18,95 +18,7 @@ module.exports = function(app) {
         location: fields.string ({      label: 'Location'
     }),
   })
-  var page_title = "All Mfntapes",
-      cnt = 1;
-
-  app.get('/user', function(req, res){
-    res.render('mfntape/joe');
-  })
-
-  function makeHandler(item) {
-    console.log("stop 1")
-
-    return function(req, res) {
-      reg_form.handle(req, {
-        success: function (form) {
-          console.log("Post - Success")
-          var mfntape = Mfntape(form.data);
-          mfntape.save(function(err) {
-            if (err) {
-              console.error(err);
-              res.render('mfntape/create')
-            } else {
-              res.redirect('/mfntapes');
-            }
-          });
-        },
-        other: function (form) {
-          console.log("Post - Other")
-          var mfntape = Mfntape(form.data);
-          mfntape.save(function(err) {
-            if (err) {
-              console.error(err);
-              res.render('mfntape/create')
-            } else {
-              res.redirect('/mfntapes');
-            }
-          });
-        },
-        empty: function (form) {
-          console.log("Post - There was no form data in the request")
-          res.redirect('/mfntapes');
-        }
-      });
-    };
-  }
-
-  app.post('/mfntape/joe', function(req, res){
-    res.send("Submitted Count: " + req.body.cnt);
-    cnt = req.body.cnt;
-    console.log("cnt = " + cnt);
-    var item = '/mfntapes/create';
-    for (var i = 0; i < cnt; i++) {
-      //app.post(item, makeHandler(item));
-      console.log("i = " + i);
-
-      app.post('/mfntapes/create', function(req, res) {
-        reg_form.handle(req, {
-          success: function (form) {
-            console.log("Post - Success")
-            var mfntape = Mfntape(form.data);
-            mfntape.save(function(err) {
-              if (err) {
-                console.error(err);
-                res.render('mfntape/create')
-              } else {
-                res.redirect('/mfntapes');
-              }
-            });
-          },
-          other: function (form) {
-            console.log("Post - Other")
-            var mfntape = Mfntape(form.data);
-            mfntape.save(function(err) {
-              if (err) {
-                console.error(err);
-                res.render('mfntape/create')
-              } else {
-                res.redirect('/mfntapes');
-              }
-            });
-          },
-          empty: function (form) {
-            console.log("Post - There was no form data in the request")
-            res.redirect('/mfntapes');
-          }
-        });
-      });
-
-    }
-  })
-
+  var page_title = "All Mfntapes"
   app.param('mfntapeId', function(req, res, next, id) {
     Mfntape.findById(id, function(err, mfntape) {
       if (err) {

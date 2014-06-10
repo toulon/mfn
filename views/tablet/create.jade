@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  body
+    form#tablet-form.form-horizontal.col-md-offset-2.col-md-10(action="/tablets/create", method="POST")
+      fieldset
+        legend Create a new Tablet
+
+        != form
+
+      .form-group.col-md-offset-2.col-md-10
+          a.btn.btn-warning(href="/tablets") Back
+          | &nbsp;
+          button.btn.btn-primary(type="submit") Create

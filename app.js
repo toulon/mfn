@@ -60,8 +60,6 @@ require('./helpers')(app);
 require('./routes')(app);
 
 var invokedAsMain = require.main === module;
-// Tapename link click
-//$('#tapeList table tbody').on('click', 'td a.linkshowtape', showTapeInfo);
 
 // Start server if not invoked by require('./app')
 if (invokedAsMain) {

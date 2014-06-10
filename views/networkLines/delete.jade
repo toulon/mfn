@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Networklines?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Itticket
+          td= display(networkLines.itTicket)
+        tr
+          td Nbrlines
+          td= display(networkLines.nbrLines)
+        tr
+          td Location
+          td= display(networkLines.location)
+        tr
+          td Requester
+          td= display(networkLines.requester)
+        tr
+          td Description
+          td= display(networkLines.description)
+        tr
+          td Notes
+          td= display(networkLines.notes)
+        tr
+          td Completeddate
+          td= display(networkLines.completedDate)
+
+
+  form#networkLines-form.form-horizontal(action="/networkLines/" + networkLines._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/networkLines") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

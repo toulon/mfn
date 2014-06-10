@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Tablet?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(tablet.name)
+        tr
+          td Curdate
+          td= display(tablet.curdate)
+        tr
+          td Location
+          td= display(tablet.location)
+        tr
+          td Status
+          td= display(tablet.status)
+
+
+  form#tablet-form.form-horizontal(action="/tablets/" + tablet._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/tablets") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

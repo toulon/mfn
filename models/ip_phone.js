@@ -6,11 +6,10 @@ var Ip_phone = new Schema({
   model: { type: String },
   part_nbr: { type: String },
   extention: { type: String },
+  location: { type: String },
+  label: { type: String },
+  deployed: { type: Boolean },
   note: { type: String }
 });
-
-Ip_phone.statics.findByMac = function (mac, callback) {
-  return this.find({ mac: mac }, callback);
-}
 
 module.exports = mongoose.model('Ip_phone', Ip_phone);

@@ -26,6 +26,9 @@ block content
 				th Model
 				th Part_nbr
 				th Extention
+				th Location
+				th Label
+				th Deployed
 				th Note
 		tbody
 			each ip_phone in ip_phones
@@ -38,6 +41,12 @@ block content
 						td= display(ip_phone.part_nbr)
 
 						td= display(ip_phone.extention)
+
+						td= display(ip_phone.location)
+
+						td= display(ip_phone.label)
+
+						td= display(ip_phone.deployed)
 
 						td= display(ip_phone.note)
 

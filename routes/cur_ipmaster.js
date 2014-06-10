@@ -23,14 +23,6 @@ var reg_form = forms.create({
     }),
         note: fields.string ({      label: 'Note'
     }),
-        first: fields.string ({      label: 'First'
-    }),
-        second: fields.string ({      label: 'Second'
-    }),
-        third: fields.string ({      label: 'Third'
-    }),
-        fourth: fields.string ({      label: 'Fourth'
-    }),
   })
   var page_title = "Subnet Reports"
   app.param('cur_ipmasterId', function(req, res, next, id) {
@@ -235,6 +227,7 @@ var reg_form = forms.create({
       res.render('cur_ipmaster/subnet', { cur_ipmasters : cur_ipmasters, page_title : page_title });
     });
   });
+
 
   app.get('/cur_ipmasters/subnet_172_16_67', function(req, res) {
     Cur_ipmaster.find({first : { $all  : [ "172" ] },

@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2.display-data Waptracker Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(waptracker.name)
+        tr
+          td Tdate
+          td= display(waptracker.tdate)
+        tr
+          td Location
+          td= display(waptracker.location)
+        tr
+          td Issue
+          td= display(waptracker.issue)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/waptrackers") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/waptrackers/" + waptracker._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/waptrackers/" + waptracker._id + "/delete") Delete

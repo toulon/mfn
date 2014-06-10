@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h2.display-data Networklines Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Itticket
+          td= display(networkLines.itTicket)
+        tr
+          td Nbrlines
+          td= display(networkLines.nbrLines)
+        tr
+          td Location
+          td= display(networkLines.location)
+        tr
+          td Requester
+          td= display(networkLines.requester)
+        tr
+          td Description
+          td= display(networkLines.description)
+        tr
+          td Notes
+          td= display(networkLines.notes)
+        tr
+          td Completeddate
+          td= display(networkLines.completedDate)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/networkLines") Back
+    | &nbsp;
+    a.btn.btn-primary(href="/networkLines/" + networkLines._id + "/edit") Edit
+    | &nbsp;
+    a.btn.btn-danger(href="/networkLines/" + networkLines._id + "/delete") Delete

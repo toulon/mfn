@@ -2,7 +2,6 @@ var mongoose = require('mongoose'),
    Schema = mongoose.Schema;
 
 var Wap = new Schema({
-  _id: {type: String},
   serial: { type: String, required: true },
   mac: { type: String },
   model: { type: String },

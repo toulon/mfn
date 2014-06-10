@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Waptracker?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(waptracker.name)
+        tr
+          td Tdate
+          td= display(waptracker.tdate)
+        tr
+          td Location
+          td= display(waptracker.location)
+        tr
+          td Issue
+          td= display(waptracker.issue)
+
+
+  form#waptracker-form.form-horizontal(action="/waptrackers/" + waptracker._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/waptrackers") Back
+      | &nbsp;
+      input.btn.btn-danger(type="submit", value="Delete")

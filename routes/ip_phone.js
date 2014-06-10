@@ -17,6 +17,12 @@ var reg_form = forms.create({
     }),
         extention: fields.string ({      label: 'Extention'
     }),
+        location: fields.string ({      label: 'Location'
+    }),
+        label: fields.string ({      label: 'Label'
+    }),
+        deployed: fields.boolean ({      label: 'Deployed'
+    }),
         note: fields.string ({      label: 'Note'
     }),
   })
@@ -60,15 +66,6 @@ var reg_form = forms.create({
     reg_form.handle(req, {
       success: function (form) {
         console.log("Post - Success")
-        Ip_phone.findByMac(req.mac, function(err, ip_phone) {
-          if (err) {
-            next(err);
-          } else {
-            res.locals.ip_phone = ip_phone;
-            next();
-          }
-        });
-
         var ip_phone = Ip_phone(form.data);
         ip_phone.save(function(err) {
           if (err) {

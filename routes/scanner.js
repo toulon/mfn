@@ -17,6 +17,10 @@ var reg_form = forms.create({
     }),
         browserVersion: fields.string ({      label: 'Browserversion'
     }),
+        converted: fields.boolean ({      label: 'Converted'
+    }),
+        notes: fields.string ({      label: 'Notes'
+    }),
   })
   var page_title = "All Scanners"
   app.param('scannerId', function(req, res, next, id) {

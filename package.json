@@ -10,8 +10,7 @@
     "stylus": "0.37.x",
     "forms-bootstrap": "0.0.6",
     "async": "~0.2.10",
-    "connect-mongo": "0.3.x",
-    "string": "~1.8.0"
+    "connect-mongo": "0.3.x"
   },
   "devDependencies": {
     "mocha": "*"
